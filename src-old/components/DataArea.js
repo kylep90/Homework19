@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import DataTable from "./DataTable";
+// import DataTable from "./DataTable";
 // import Nav from "./Nav";
-import API from "../utils/API";
-import SearchResults from "./SearchResults";
+// import API from "../utils/API";
+// import SearchResults from "./SearchResults";
+// import DataBody from "./DataBody"
 
 class DataArea extends Component {
     state = {
@@ -32,7 +33,9 @@ class DataArea extends Component {
         const response = await fetch(url);
         const data = await response.json();
         console.log(data);
-        this.setState({users : data.results});
+        this.setState({users : data.results})
+        console.log(this.state.users)
+        // var listOfUsers = this.state.users;
 
     }
     render(){
@@ -40,18 +43,19 @@ class DataArea extends Component {
             <>
             {/* <Nav handleSearchChange={this.handleSearchChange} /> */}
             <div className="data-area">
-            
-    <div>{this.state.users[0].gender}</div>
-    {/* <div>{this.state.users[0].name.first}</div> */}
-    <div>{this.state.users[0].email}</div>
+        <div>{this.state.users[0].gender}</div>
+        {/* <div>{this.state.users[0].name.first}</div> */}
+        <div>{this.state.users[0].email}</div>
     
 
                 {/* <p>{this.state.users[0]}</p> */}
-                <DataTable
+                {/* <DataBody /> */}
+                {/* <DataBody users={this.state.users} /> */}
+                {/* <DataTable
                 headings={this.headings}
                 users={this.state.filteredUsers}
                 handleSort={this.handleSort}
-                />
+                /> */}
             </div>
             </>//???
         );

@@ -1,6 +1,8 @@
 import React from "react";
+// import DataArea from "./DataArea";
 
 function DataBody ({users}) {
+    // console.log();
     function formatDate(date) {
     }
 
@@ -39,3 +41,5 @@ function DataBody ({users}) {
         </body>
     );
 }
+
+export default DataBody
