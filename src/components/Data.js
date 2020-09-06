@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import "../assets/style.css"
 
 class Data extends Component {
    state = {
@@ -17,12 +18,34 @@ async componentDidMount(){
 render (){
     return (
         <div>
-            {this.state.users.map(user => (
-                <div key={user.login.uuid}>
-                    <img src={user.picture.thumbnail} alt="pic"></img><p>{user.name.first} {user.name.last} {user.email} {user.cell} {user.dob.date} </p>
-                </div>
-            ))}
+            <table>
+            <tr>
+                <th>Name</th>
+                <th>Picture</th>
+                <th>Email</th>
+                <th>Telephone</th>
+                <th>Date of Birth</th>
+
+            </tr>
+            
+                {this.state.users.map(user => (
+                <tr key={user.login.uuid}>
+                
+                    
+                    <td><img src={user.picture.thumbnail} alt="pic"></img></td>
+                    <td>{user.name.first} {user.name.last}</td>
+                    <td>{user.email}</td>
+                    <td>{user.cell}</td>
+                    <td>{user.dob.date}</td>
+                
+                </tr>))}
+                
+            
+            </table>
+            
+            
         </div>
+        
            
 
     );
